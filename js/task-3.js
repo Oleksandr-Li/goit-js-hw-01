@@ -1,17 +1,8 @@
 function getElementWidth(content, padding, border) {
-    return (
-        Number.parseFloat(content) +
-        Number.parseFloat(padding) * 2 +
-        Number.parseFloat(border) * 2
-    );
+    const totalWidth = parseFloat(content) + parseFloat(padding) * 2 + parseFloat(border) * 2;
+    return totalWidth;
 }
-function logWithSeparator(message) {
-    console.log(
-        '%c ',
-        'background: brown; color: brown; padding: 10px ; font-size: 20px;'
-    );
-    console.log(
-        `%c${message}`,
-        'background: white; color: black; padding: 8px; font-size: 16px; font-weight: bold;'
-    );
-}
+
+console.log(getElementWidth("50px", "8px", "4px")); // 74
+console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+console.log(getElementWidth("200px", "0px", "0px")); // 200
